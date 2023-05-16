@@ -1,0 +1,68 @@
+{
+  "pins" : [
+    {
+      "identity" : "analytics-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/segmentio/analytics-ios",
+      "state" : {
+        "revision" : "fc64997865619f73bbab196c164f7845a13da110",
+        "version" : "4.1.6"
+      }
+    },
+    {
+      "identity" : "livecom-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LiveComSollutions/livecom-ios",
+      "state" : {
+        "revision" : "94686d1f1480d150951150562367429a9c5d1eca",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "stripe-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stripe/stripe-ios",
+      "state" : {
+        "revision" : "e242f59ce90914e93c8308e0c3ceba7368575b77",
+        "version" : "22.8.4"
+      }
+    },
+    {
+      "identity" : "swift-nio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio.git",
+      "state" : {
+        "revision" : "0f6a62a87506c8fe63503efbf97cf601e78abf64",
+        "version" : "2.32.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-extras",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-extras.git",
+      "state" : {
+        "revision" : "8eea84ec6144167354387ef9244b0939f5852dc8",
+        "version" : "1.11.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-http2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-http2.git",
+      "state" : {
+        "revision" : "000ca94f9de92c95b9ac85d44600b7b0fe25a3e5",
+        "version" : "1.19.2"
+      }
+    },
+    {
+      "identity" : "swift-nio-transport-services",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-transport-services.git",
+      "state" : {
+        "revision" : "1a4692acb88156e3da1b0c6732a8a38b2a744166",
+        "version" : "1.12.0"
+      }
+    }
+  ],
+  "version" : 2
+}

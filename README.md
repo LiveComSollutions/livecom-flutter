@@ -1,7 +1,7 @@
 This repository contains wrappers and a demo project.
 
 ## Installation
-Copy ```lib/livecomsdk``` folder to your project.
+Copy ```lib/livecomsdk```, ```ios/Runner/LiveComSDK``` folders to your project.
 ### iOS
 To integrate LiveComSDK using the Xcode-built-in SPM, choose File → Swift Packages → Add Package Dependency. Enter the following url: https://github.com/LiveComSollutions/livecom-ios . In the following step, select LiveComSDKWrapper as the package product and click Finish.
 

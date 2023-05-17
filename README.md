@@ -39,7 +39,7 @@ if (Platform.isAndroid) {
     );
 }
 ```
-Add the following code to AppDelegate:
+Add the following code to AppDelegate (iOS only):
 ```
 override func application(
     _ application: UIApplication,
@@ -77,8 +77,8 @@ _liveComPlugin.presentStream(streamId)
 It is possible to display your own screens for product and checkout.
 1) Set true in these methods:
 ```sh
-presentStream.setUseCustomProductScreen(true)
-presentStream.setUseCustomCheckoutScreen(true)
+_liveComPlugin.useCustomProductScreen = true
+_liveComPlugin.useCustomCheckoutScreen = true
 ```
 2) Open your screen in LiveComDelegate methods:
 ``` sh 

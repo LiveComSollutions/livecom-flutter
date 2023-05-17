@@ -5,6 +5,10 @@ Copy ```lib/livecomsdk```, ```ios/Runner/LiveComSDK``` folders to your project.
 ### iOS
 To integrate LiveComSDK using the Xcode-built-in SPM, choose File → Swift Packages → Add Package Dependency. Enter the following url: https://github.com/LiveComSollutions/livecom-ios . In the following step, select LiveComSDKWrapper as the package product and click Finish.
 
+### Android
+To integrate LiveComSDK follow document: https://github.com/LiveComSollutions/livecom-android-documentation/blob/main/how_to_install.md
+Add this dependencies to build.gradle files inside android folder of your flutter project.
+
 ## Initialize SDK
 To initialize LiveCom SDK, you need pass SDK Key, Appearence and ShareSettings objects.
 
@@ -18,15 +22,22 @@ Call  this method as soon as possible. Because it needs time to load some data.
 ```sh 
 import LiveComSDK from './native_modules/LiveComSDK'
 ...
-_liveComPlugin.configure(
-    "f400270e-92bf-4df1-966c-9f33301095b3",
-    "0091FF",
-    "#EF5DA8",
-    "#0091FF",
-    "#00D1FF",
-    "https://website.com/{video_id}",
-    "https://website.com/{video_id}?p={product_id}"
-  );
+if (Platform.isAndroid) {
+    _liveComPlugin.configureAndroid(
+      "e2d97b7e-9a65-4edd-a820-67cd91f8973d",
+      "website.com"
+    );
+} else {
+    _liveComPlugin.configureIOS(
+        "f400270e-92bf-4df1-966c-9f33301095b3",
+        "0091FF",
+        "#EF5DA8",
+        "#0091FF",
+        "#00D1FF",
+        "https://website.com/{video_id}",
+        "https://website.com/{video_id}?p={product_id}"
+    );
+}
 ```
 Add the following code to AppDelegate:
 ```

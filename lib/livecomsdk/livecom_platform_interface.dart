@@ -33,7 +33,7 @@ abstract class LiveComPlatform extends PlatformInterface {
   bool get useCustomCheckoutScreen;
   set useCustomCheckoutScreen(bool useCustomCheckoutScreen);
 
-  void configure(
+  void configureIOS(
     String sdkKey,
     String primaryColor,
     String secondaryColor,
@@ -42,18 +42,25 @@ abstract class LiveComPlatform extends PlatformInterface {
     String videoLinkTemplate,
     String productLinkTemplate
   ) {
-    throw UnimplementedError('configure() has not been implemented.');
+    throw UnimplementedError('configureIOS() has not been implemented.');
   }
 
-  void presentStreams() { 
+  void configureAndroid(
+      String sdkKey,
+      String shareDomain
+  ) {
+    throw UnimplementedError('configureAndroid() has not been implemented.');
+  }
+
+  void presentStreams() {
     throw UnimplementedError('presentStreams() has not been implemented.');
   }
 
-  void presentStream(String id) { 
+  void presentStream(String id) {
     throw UnimplementedError('presentStream(String id) has not been implemented.');
   }
 
-  void trackConversion(String orderId, int orderAmountInCents, String currency, List<Map<String, dynamic>> products) { 
+  void trackConversion(String orderId, int orderAmountInCents, String currency, List<Map<String, dynamic>> products) {
     throw UnimplementedError('presentStream(String id) has not been implemented.');
   }
 }

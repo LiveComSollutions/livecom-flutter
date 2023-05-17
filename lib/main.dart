@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:livecom/livecomsdk/livecom.dart';
 import 'package:livecom/livecomsdk/livecom_conversion_product.dart';
@@ -5,18 +7,26 @@ import 'package:livecom/livecomsdk/livecom_delegate.dart';
 
 final _liveComPlugin = LiveComSDK();
 
-void main() {
+Future<void> main() async {
   const MyApp app = MyApp();
   runApp(app);
-  _liveComPlugin.configure(
-    "f400270e-92bf-4df1-966c-9f33301095b3",
-    "0091FF",
-    "#EF5DA8",
-    "#0091FF",
-    "#00D1FF",
-    "https://website.com/{video_id}",
-    "https://website.com/{video_id}?p={product_id}"
-  );
+
+  if (Platform.isAndroid) {
+    _liveComPlugin.configureAndroid(
+      "e2d97b7e-9a65-4edd-a820-67cd91f8973d",
+      "website.com"
+    );
+  } else {
+    _liveComPlugin.configureIOS(
+        "f400270e-92bf-4df1-966c-9f33301095b3",
+        "0091FF",
+        "#EF5DA8",
+        "#0091FF",
+        "#00D1FF",
+        "https://website.com/{video_id}",
+        "https://website.com/{video_id}?p={product_id}"
+    );
+  }
   // _liveComPlugin.useCustomProductScreen = true;
   // __liveComPlugin.useCustomCheckoutScreen = true
   _liveComPlugin.delegate = app;

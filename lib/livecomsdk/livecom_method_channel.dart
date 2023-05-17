@@ -67,7 +67,7 @@ class MethodChannelLiveCom extends LiveComPlatform {
   }
   
   @override
-  void configure(
+  void configureIOS(
     String sdkKey,
     String primaryColor,
     String secondaryColor,
@@ -87,6 +87,11 @@ class MethodChannelLiveCom extends LiveComPlatform {
         productLinkTemplate
        ]
     );
+  }
+
+  @override
+  void configureAndroid(String sdkKey, String shareDomain) {
+    methodChannel.invokeMethod("configure", [sdkKey, shareDomain]);
   }
 
   @override

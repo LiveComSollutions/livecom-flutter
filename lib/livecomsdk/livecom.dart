@@ -29,7 +29,7 @@ class LiveComSDK {
     LiveComPlatform.instance.useCustomCheckoutScreen = value;
   }
   
-  void configure(
+  void configureIOS(
     String sdkKey,
     String primaryColor,
     String secondaryColor,
@@ -38,7 +38,14 @@ class LiveComSDK {
     String videoLinkTemplate,
     String productLinkTemplate
   ) {
-    LiveComPlatform.instance.configure(sdkKey, primaryColor, secondaryColor, gradientFirstColor, gradientSecondColor, videoLinkTemplate, productLinkTemplate);
+    LiveComPlatform.instance.configureIOS(sdkKey, primaryColor, secondaryColor, gradientFirstColor, gradientSecondColor, videoLinkTemplate, productLinkTemplate);
+  }
+
+  void configureAndroid(
+      String sdkKey,
+      String shareDomain
+  ) {
+    LiveComPlatform.instance.configureAndroid(sdkKey, shareDomain);
   }
 
   void presentStreams() {
@@ -51,10 +58,10 @@ class LiveComSDK {
 
   void trackConversion(String orderId, int orderAmountInCents, String currency, List<LiveComConversionProduct> products) {
     List<Map<String, dynamic>> conversionProducts = [];
-    products.forEach((product) {
+    for (var product in products) {
       Map<String, dynamic> productMap = { "sku": product.sku, "name": product.name, "count": product.count, "stream_id": product.streamId };
       conversionProducts.add(productMap);
-    });
+    }
     LiveComPlatform.instance.trackConversion(orderId, orderAmountInCents, currency, conversionProducts);
   }
 }

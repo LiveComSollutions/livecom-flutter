@@ -48,7 +48,9 @@ class MainActivity : FlutterActivity() {
             override fun productsInCartChanged(productsInCart: List<LiveComProductInCart>) {
                 channel.invokeMethod(
                     "onCartChange",
-                    productsInCart.map { it.sku }
+                    productsInCart.flatMap { product ->
+                        buildList { repeat(product.count) { add(product.sku) } }
+                    }
                 )
             }
 
@@ -77,6 +79,7 @@ class MainActivity : FlutterActivity() {
                     val args = call.arguments as List<String>
                     LiveCom.configure(applicationContext, args[0], args[1])
                 }
+
                 "presentStreams" -> {
                     lifecycleScope.launch {
                         LiveCom.openSdkScreen(
@@ -85,6 +88,7 @@ class MainActivity : FlutterActivity() {
                         )
                     }
                 }
+
                 "presentStream" -> {
                     lifecycleScope.launch {
                         LiveCom.openSdkScreen(
@@ -93,6 +97,7 @@ class MainActivity : FlutterActivity() {
                         )
                     }
                 }
+
                 "trackConversion" -> {
                     val args = call.arguments as List<Any>
                     val orderId = args[0] as String

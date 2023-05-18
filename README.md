@@ -9,7 +9,17 @@ To integrate LiveComSDK using the Xcode-built-in SPM, choose File → Swift Pack
 ### Android
 To integrate LiveComSDK follow document: https://github.com/LiveComSollutions/livecom-android-documentation/blob/main/how_to_install.md
 Add this dependencies to build.gradle files inside android folder of your flutter project (both inside ```app``` and ```src``` directories).
-Create LiveComPlugin instance inside MainActivity.configureFlutterEngine() method. You will need coroutines dependency also (check build.gradle file dependencies section)
+Create LiveComPlugin instance inside MainActivity.configureFlutterEngine() method. You will need coroutines dependency also (check build.gradle file dependencies section).
+Also please note this code inside ```app/build.gradle``` file:
+```groovy
+android {
+...
+    packagingOptions {
+        resources.excludes.add("META-INF/LICENSE*.*")
+    }
+...
+```
+This is necessary in order to avoid error when building application. Otherwise you will get gradle error about multiple License files.
 
 ## Initialize SDK
 To initialize LiveCom SDK, you need pass:

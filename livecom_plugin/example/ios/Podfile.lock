@@ -1,0 +1,171 @@
+PODS:
+  - _NIODataStructures (2.32.0)
+  - Analytics (4.1.6)
+  - CNIOAtomics (2.32.0)
+  - CNIOBoringSSL (2.14.0)
+  - CNIOBoringSSLShims (2.14.0):
+    - CNIOBoringSSL (= 2.14.0)
+  - CNIODarwin (2.32.0)
+  - CNIOHTTPParser (2.32.0)
+  - CNIOLinux (2.32.0)
+  - CNIOWindows (2.32.0)
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - livecom_ios (1.1.1):
+    - Analytics (= 4.1.6)
+    - Flutter
+    - StripeApplePay (= 22.8.4)
+    - SwiftNIO (= 2.32.0)
+    - SwiftNIOExtras (= 1.11.0)
+    - SwiftNIOHTTP2 (= 1.19.2)
+    - SwiftNIOSSL (= 2.14.0)
+    - SwiftNIOTransportServices (= 1.12.0)
+  - StripeApplePay (22.8.4):
+    - StripeCore (= 22.8.4)
+  - StripeCore (22.8.4)
+  - SwiftNIO (2.32.0):
+    - SwiftNIOCore (= 2.32.0)
+    - SwiftNIOEmbedded (= 2.32.0)
+    - SwiftNIOPosix (= 2.32.0)
+  - SwiftNIOConcurrencyHelpers (2.32.0):
+    - CNIOAtomics (= 2.32.0)
+  - SwiftNIOCore (2.32.0):
+    - CNIOLinux (= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (= 2.32.0)
+  - SwiftNIOEmbedded (2.32.0):
+    - _NIODataStructures (= 2.32.0)
+    - SwiftNIOCore (= 2.32.0)
+  - SwiftNIOExtras (1.11.0):
+    - _NIODataStructures (< 3, >= 2.32.0)
+    - CNIOAtomics (< 3, >= 2.32.0)
+    - CNIODarwin (< 3, >= 2.32.0)
+    - CNIOLinux (< 3, >= 2.32.0)
+    - CNIOWindows (< 3, >= 2.32.0)
+    - SwiftNIO (< 3, >= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (< 3, >= 2.32.0)
+    - SwiftNIOCore (< 3, >= 2.32.0)
+    - SwiftNIOEmbedded (< 3, >= 2.32.0)
+    - SwiftNIOPosix (< 3, >= 2.32.0)
+  - SwiftNIOFoundationCompat (2.32.0):
+    - SwiftNIO (= 2.32.0)
+    - SwiftNIOCore (= 2.32.0)
+  - SwiftNIOHPACK (1.19.2):
+    - SwiftNIO (< 3, >= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (< 3, >= 2.32.0)
+    - SwiftNIOCore (< 3, >= 2.32.0)
+    - SwiftNIOHTTP1 (< 3, >= 2.32.0)
+  - SwiftNIOHTTP1 (2.32.0):
+    - CNIOHTTPParser (= 2.32.0)
+    - SwiftNIO (= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (= 2.32.0)
+    - SwiftNIOCore (= 2.32.0)
+  - SwiftNIOHTTP2 (1.19.2):
+    - SwiftNIO (< 3, >= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (< 3, >= 2.32.0)
+    - SwiftNIOCore (< 3, >= 2.32.0)
+    - SwiftNIOHPACK (= 1.19.2)
+    - SwiftNIOHTTP1 (< 3, >= 2.32.0)
+    - SwiftNIOTLS (< 3, >= 2.32.0)
+  - SwiftNIOPosix (2.32.0):
+    - _NIODataStructures (= 2.32.0)
+    - CNIODarwin (= 2.32.0)
+    - CNIOLinux (= 2.32.0)
+    - CNIOWindows (= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (= 2.32.0)
+    - SwiftNIOCore (= 2.32.0)
+  - SwiftNIOSSL (2.14.0):
+    - CNIOBoringSSL (= 2.14.0)
+    - CNIOBoringSSLShims (= 2.14.0)
+    - SwiftNIO (< 3, >= 2.30.0)
+    - SwiftNIOConcurrencyHelpers (< 3, >= 2.30.0)
+    - SwiftNIOTLS (< 3, >= 2.30.0)
+  - SwiftNIOTLS (2.32.0):
+    - SwiftNIO (= 2.32.0)
+    - SwiftNIOCore (= 2.32.0)
+  - SwiftNIOTransportServices (1.12.0):
+    - _NIODataStructures (< 3, >= 2.32.0)
+    - CNIOAtomics (< 3, >= 2.32.0)
+    - CNIODarwin (< 3, >= 2.32.0)
+    - CNIOLinux (< 3, >= 2.32.0)
+    - CNIOWindows (< 3, >= 2.32.0)
+    - SwiftNIO (< 3, >= 2.32.0)
+    - SwiftNIOConcurrencyHelpers (< 3, >= 2.32.0)
+    - SwiftNIOCore (< 3, >= 2.32.0)
+    - SwiftNIOEmbedded (< 3, >= 2.32.0)
+    - SwiftNIOFoundationCompat (< 3, >= 2.32.0)
+    - SwiftNIOPosix (< 3, >= 2.32.0)
+    - SwiftNIOTLS (< 3, >= 2.32.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - livecom_ios (from `.symlinks/plugins/livecom_ios/ios`)
+
+SPEC REPOS:
+  trunk:
+    - _NIODataStructures
+    - Analytics
+    - CNIOAtomics
+    - CNIOBoringSSL
+    - CNIOBoringSSLShims
+    - CNIODarwin
+    - CNIOHTTPParser
+    - CNIOLinux
+    - CNIOWindows
+    - StripeApplePay
+    - StripeCore
+    - SwiftNIO
+    - SwiftNIOConcurrencyHelpers
+    - SwiftNIOCore
+    - SwiftNIOEmbedded
+    - SwiftNIOExtras
+    - SwiftNIOFoundationCompat
+    - SwiftNIOHPACK
+    - SwiftNIOHTTP1
+    - SwiftNIOHTTP2
+    - SwiftNIOPosix
+    - SwiftNIOSSL
+    - SwiftNIOTLS
+    - SwiftNIOTransportServices
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  livecom_ios:
+    :path: ".symlinks/plugins/livecom_ios/ios"
+
+SPEC CHECKSUMS:
+  _NIODataStructures: e63beb6bfebffbd4399e514b7ecaf3f96cd8671c
+  Analytics: eefe524436f904b8bb3f8c8c3425280e43b34efc
+  CNIOAtomics: 9a2bb6949fab36db580f9973e36813bf0744cace
+  CNIOBoringSSL: f3b67841fc3aefe1154f1b4232f4ac7a922d16dc
+  CNIOBoringSSLShims: 95b5c4ddd4a443fb61393c3dd60671901a18b40c
+  CNIODarwin: 6c3b7847a6a2691ae9f97eac75103fe06f61fe4c
+  CNIOHTTPParser: 4d469972144001aace68635ae33009c6b97c377f
+  CNIOLinux: d33b1366a209d566a0a81eaecac6283a40ecc840
+  CNIOWindows: 310f73e804e6333a63e921b61892dbbaf61bd0cc
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  livecom_ios: 24a9a02bfaa28f0ec846a2869a694a4ec38b26e8
+  StripeApplePay: 6e9aebd3d248464836e9fbdaef6e5fb1817d56a6
+  StripeCore: 193f27552fb98108ebfe0df11651fe5f38948305
+  SwiftNIO: 75035e9e47345716eb6f01effaa4e14b9564ae4a
+  SwiftNIOConcurrencyHelpers: cdc0919908b59ae643e6924f57030dacdea0499d
+  SwiftNIOCore: 33d188a3d66eb65010bba8c4e7ea3efeabf757f7
+  SwiftNIOEmbedded: d9b5cc8e3fc22b057501047ba3c8561c88d21544
+  SwiftNIOExtras: 481f74d6bf0b0ef699905ed66439cb019c4975c9
+  SwiftNIOFoundationCompat: 77058ddb6d30bfcda27b82f55bf9f004131917bc
+  SwiftNIOHPACK: 5692b7d669e954adf9920432a8a3e279aceee55e
+  SwiftNIOHTTP1: 6c68f7ae14f67941d67c2056c7d9d3b727993f12
+  SwiftNIOHTTP2: f6dd22df6f4463d4f5bf310cb2f43e52f4e79ce2
+  SwiftNIOPosix: 745b539a2067e5159d5de54e77860bae9e281e3a
+  SwiftNIOSSL: 44ca606052bda37aa92cd70b3790f2fa9cb60ecd
+  SwiftNIOTLS: e26c48fdc92b753860349d75e1c49855f4125655
+  SwiftNIOTransportServices: 0b2b407819d82eb63af558c5396e33c945759503
+
+PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
+
+COCOAPODS: 1.12.1

@@ -10,6 +10,9 @@ public class LiveComIosPlugin: NSObject, FlutterPlugin {
     private var channel: FlutterMethodChannel?
 
     public static func register(with registrar: FlutterPluginRegistrar) {
+        // We support only iOS 13 +
+        // but in order to support projects with ios 12, we do such a check
+        guard #available(iOS 13, *) else { return }
         let channel = FlutterMethodChannel(name: "com.livecom.ios", binaryMessenger: registrar.messenger())
         let instance = LiveComIosPlugin()
         instance.channel = channel

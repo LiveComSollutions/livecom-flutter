@@ -1,0 +1,4 @@
+framework module LiveComSDK {
+  header "LiveComSDK-Swift.h"
+  requires objc
+}

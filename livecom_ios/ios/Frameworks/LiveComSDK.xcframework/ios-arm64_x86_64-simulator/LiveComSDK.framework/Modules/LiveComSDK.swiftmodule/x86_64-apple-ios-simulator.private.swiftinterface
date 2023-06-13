@@ -1,0 +1,162 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LiveComSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFAudio
+import AVFoundation
+import AVKit
+import Accelerate
+import CoreImage.CIFilterBuiltins
+import Compression
+import CoreFoundation
+import CoreGraphics
+import CoreImage
+import CoreMedia
+import Darwin
+import Dispatch
+import Foundation
+import Foundation/*.Data*/
+import MapKit
+import Network
+import ObjectiveC
+import PassKit
+import QuartzCore
+import SafariServices
+import Security
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import simd
+import zlib
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func setImage(_ image: UIKit.UIImage?)
+}
+extension LiveComSDK.Appearence {
+  @objc(LiveComAppTheme) public class AppTheme : ObjectiveC.NSObject {
+    @objc public init(primary: UIKit.UIColor, secondary: UIKit.UIColor, gradientFirst: UIKit.UIColor, gradientSecond: UIKit.UIColor)
+    @objc deinit
+  }
+}
+@objc @objcMembers public class Appearence : ObjectiveC.NSObject {
+  @objc public init(theme: LiveComSDK.Appearence.AppTheme, cornerRadius: LiveComSDK.Appearence.CornerRadius? = nil, font: LiveComSDK.Appearence.Font? = nil)
+  @objc deinit
+}
+extension LiveComSDK.Appearence {
+  @objc(LiveComAppearenceCornerRadius) public class CornerRadius : ObjectiveC.NSObject, Swift.Codable {
+    @objc public var small: CoreFoundation.CGFloat
+    @objc public var large: CoreFoundation.CGFloat
+    @objc public init(small: CoreFoundation.CGFloat = 10.0, large: CoreFoundation.CGFloat = 15.0)
+    @objc deinit
+    public func encode(to encoder: Swift.Encoder) throws
+    required public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension LiveComSDK.Appearence {
+  @objc(LiveComAppearenceFont) public class Font : ObjectiveC.NSObject {
+    @objc public var regularName: Swift.String?
+    @objc public var semiboldName: Swift.String?
+    @objc public var boldName: Swift.String?
+    @objc public init(regularName: Swift.String? = nil, semiboldName: Swift.String? = nil, boldName: Swift.String? = nil)
+    @objc deinit
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class LiveCom : ObjectiveC.NSObject {
+  @objc public static let shared: LiveComSDK.LiveCom
+  @objc weak public var delegate: LiveComSDK.LiveComDelegate?
+  @objc public var shareSettings: LiveComSDK.LiveCom.ShareSettings!
+  @objc public var pipSettings: LiveComSDK.LiveCom.PiPSettings {
+    @objc get
+    @objc set
+  }
+  public var loggingLevel: LiveComSDK.LoggingLevel {
+    get
+    set
+  }
+  @objc public var isPrepared: Swift.Bool {
+    @objc get
+  }
+  @objc public func configure(sdkKey: Swift.String, appearence: LiveComSDK.Appearence, shareSettings: LiveComSDK.LiveCom.ShareSettings, pipSettings: LiveComSDK.LiveCom.PiPSettings = .init(), delegate: LiveComSDK.LiveComDelegate? = nil, isAppClip: Swift.Bool = false)
+  @objc public func `continue`(userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  @objc public func presentStreams(completion: ((_ success: Swift.Bool) -> Swift.Void)? = nil)
+  @objc public func presentStream(id: Swift.String, productId: Swift.String? = nil, completion: ((_ success: Swift.Bool) -> Swift.Void)? = nil)
+  @objc public func presentCheckout(completion: ((_ success: Swift.Bool) -> Swift.Void)? = nil)
+  @objc public func trackConversion(_ conversion: LiveComSDK.LiveCom.Conversion)
+  @objc deinit
+}
+@objc public protocol LiveComDelegate {
+  @objc optional func userDidRequestOpenProductScreen(for product: LiveComSDK.LiveCom.Product, streamId: Swift.String, presenting presentingViewController: UIKit.UIViewController) -> Swift.Bool
+  @objc optional func userDidRequestOpenCheckoutScreen(products: [LiveComSDK.LiveCom.Product], presenting presentingViewController: UIKit.UIViewController) -> Swift.Bool
+  @objc optional func productDidAddToCart(_ product: LiveComSDK.LiveCom.Product, inStreamId streamId: Swift.String)
+  @objc optional func productDidDeleteFromCart(_ productSKU: Swift.String)
+  @objc optional func cartDidChange(products: [LiveComSDK.LiveCom.Product])
+  @objc optional func liveComWillAppear()
+  @objc optional func liveComDidAppear()
+}
+public enum LiveComSDKError : Swift.Error {
+  case failedToLoad
+  public static func == (a: LiveComSDK.LiveComSDKError, b: LiveComSDK.LiveComSDKError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LiveComSDK.LiveCom {
+  @objc(LiveComConversion) public class Conversion : ObjectiveC.NSObject {
+    @objc public var orderId: Swift.String
+    @objc public var orderAmountInCents: Swift.Int
+    @objc public var currency: Swift.String
+    @objc public var products: [LiveComSDK.LiveCom.Conversion.Product]
+    @objc public init(orderId: Swift.String, orderAmountInCents: Swift.Int, currency: Swift.String, products: [LiveComSDK.LiveCom.Conversion.Product])
+    @objc deinit
+  }
+}
+extension LiveComSDK.LiveCom.Conversion {
+  @objc(LiveComConversionProduct) public class Product : ObjectiveC.NSObject {
+    @objc public var sku: Swift.String
+    @objc public var name: Swift.String
+    @objc public var streamId: Swift.String
+    @objc public var count: Swift.Int
+    @objc public init(sku: Swift.String, name: Swift.String, streamId: Swift.String, count: Swift.Int)
+    @objc deinit
+  }
+}
+extension LiveComSDK.LiveCom {
+  @objc(LiveComProduct) public class Product : ObjectiveC.NSObject {
+    @objc final public let sku: Swift.String
+    @objc final public let name: Swift.String
+    @objc final public let price: Swift.Double
+    @objc final public let currency: Swift.String
+    @objc public init(sku: Swift.String, name: Swift.String, price: Swift.Double, currency: Swift.String)
+    @objc deinit
+  }
+}
+public enum LoggingLevel {
+  case errorsOnly
+  case all
+  public static func == (a: LiveComSDK.LoggingLevel, b: LiveComSDK.LoggingLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LiveComSDK.LiveCom {
+  @objc(LiveComPiPSettings) public class PiPSettings : ObjectiveC.NSObject {
+    @objc public init(controllersOverPiP: [UIKit.UIViewController.Type] = [])
+    @objc deinit
+  }
+}
+extension LiveComSDK.LiveCom {
+  @objc(LiveComShareSettings) public class ShareSettings : ObjectiveC.NSObject {
+    @objc public init(videoLinkTemplate: Swift.String, productLinkTemplate: Swift.String)
+    @objc deinit
+  }
+}
+extension LiveComSDK.LiveCom {
+  @objc public static let sdkVersion: Swift.String
+}
+extension LiveComSDK.LiveComSDKError : Swift.Equatable {}
+extension LiveComSDK.LiveComSDKError : Swift.Hashable {}
+extension LiveComSDK.LoggingLevel : Swift.Equatable {}
+extension LiveComSDK.LoggingLevel : Swift.Hashable {}

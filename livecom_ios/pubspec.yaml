@@ -1,5 +1,5 @@
 name: livecom_ios
-description: A new Flutter plugin project.
+description: The iOS implementation of livecom
 version: 1.1.1
 homepage: https://github.com/LiveComSollutions/livecom-flutter/tree/main/livecom_ios
 repository: https://github.com/LiveComSollutions/livecom-flutter/tree/main/livecom_ios

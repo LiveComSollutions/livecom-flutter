@@ -1,5 +1,8 @@
-name: livecom_ios_example
-description: Demonstrates how to use the livecom_ios plugin.
+name: livecom_android_example
+description: Demonstrates how to use the livecom_android plugin.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -14,9 +17,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  livecom_ios:
+  livecom_android:
     # When depending on this package from a real application you should use:
-    #   livecom_ios: ^x.y.z
+    #   livecom_android: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
     # The example app is bundled with the plugin so we use a path dependency on
     # the parent directory to use the current plugin's version.

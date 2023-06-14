@@ -1,5 +1,6 @@
+import 'dart:developer';
+import 'dart:io';
 import 'package:flutter/material.dart';
-
 import 'package:livecom_plugin/livecom_plugin.dart';
 import 'package:livecom_platform_interface/livecom_delegate.dart';
 // import 'package:livecom_platform_interface/livecom_conversion_product.dart';
@@ -13,18 +14,25 @@ void main() {
 class MyApp extends StatelessWidget with LiveComDelegate {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    _liveComPlugin.configure(
-        "f400270e-92bf-4df1-966c-9f33301095b3",
+    String? liveComSDKKey;
+    if (Platform.isAndroid) {
+      liveComSDKKey = "e2d97b7e-9a65-4edd-a820-67cd91f8973d";
+    } else if (Platform.isIOS) {
+      liveComSDKKey = "f400270e-92bf-4df1-966c-9f33301095b3";
+    }
+    if (liveComSDKKey != null) {
+      _liveComPlugin.configure(
+        liveComSDKKey,
         "0091FF",
         "#EF5DA8",
         "#0091FF",
         "#00D1FF",
         "https://website.com/{video_id}",
         "https://website.com/{video_id}?p={product_id}"
-    );
+      );
+    }
     _liveComPlugin.delegate = this;
     // Set useCustomProductScreen true if you want to open your own product screen. onRequestOpenProductScreen will be called
     // _liveComPlugin.useCustomProductScreen = true;
@@ -47,42 +55,32 @@ class MyApp extends StatelessWidget with LiveComDelegate {
 
   @override
   void onCartChange(List<String> productSKUs) {
-    print("[LiveCom] onCartChange productSKUs: ${productSKUs.join(", ")}");
+    log("[LiveCom] onCartChange productSKUs: ${productSKUs.join(", ")}");
   }
   
   @override
   void onProductAdd(String sku, String streamId) {
-    print("[LiveCom] onProductAdd sku: $sku stream_id: $streamId");
+    log("[LiveCom] onProductAdd sku: $sku stream_id: $streamId");
   }
   
   @override
   void onProductDelete(String productSKU) {
-    print("[LiveCom] onProductDelete sku: $productSKU");
+    log("[LiveCom] onProductDelete sku: $productSKU");
   }
   
   @override
   void onRequestOpenCheckoutScreen(List<String> productSKUs) {
-    print("[LiveCom] onRequestOpenCheckoutScreen productSKUs: ${productSKUs.join(", ")}");
+    log("[LiveCom] onRequestOpenCheckoutScreen productSKUs: ${productSKUs.join(", ")}");
   }
   
   @override
   void onRequestOpenProductScreen(String sku, String streamId) {
-    print("[LiveCom] onRequestOpenProductScreen sku: $sku stream_id: $streamId");
+    log("[LiveCom] onRequestOpenProductScreen sku: $sku stream_id: $streamId");
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -92,7 +90,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
- String streamId = "qQMqXx2wy";
+  String streamId = "qQMqXx2wy";
   final TextEditingController _textFieldController =
       TextEditingController(text: "qQMqXx2wy");
 

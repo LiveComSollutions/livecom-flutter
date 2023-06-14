@@ -1,5 +1,3 @@
-This repository contains wrappers and a demo project.
-
 ## Installation
 Run this command:
 With Flutter:

@@ -1,5 +1,3 @@
-This repository contains wrappers and a demo project.
-
 ## Installation
 Run this command:
 With Flutter:
@@ -27,9 +25,9 @@ Call the method below as soon as possible. Because it needs time to load some da
 ```sh 
 String? liveComSDKKey;
 if (Platform.isAndroid) {
-  liveComSDKKey = "e2d97b7e-9a65-4edd-a820-67cd91f8973d";
+  liveComSDKKey = "YOUR_ANDROID_LIVECOM_SDK_KEY";
 } else if (Platform.isIOS) {
-  liveComSDKKey = "f400270e-92bf-4df1-966c-9f33301095b3";
+  liveComSDKKey = "YOUR_IOS_LIVECOM_SDK_KEY";
 }
 if (liveComSDKKey != null) {
   _liveComPlugin.configure(

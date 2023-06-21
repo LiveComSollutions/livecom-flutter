@@ -1,6 +1,6 @@
 name: livecom_android
 description: The Android implementation of livecom
-version: 1.1.1
+version: 1.1.2
 homepage: https://github.com/LiveComSollutions/livecom-flutter/tree/main/livecom_android
 repository: https://github.com/LiveComSollutions/livecom-flutter/tree/main/livecom_android
 

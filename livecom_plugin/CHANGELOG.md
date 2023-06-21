@@ -1,7 +1,3 @@
-## 1.1.6
-
-* Downgrade Android plugin gradle
-
 ## 1.1.5
 
 * Add README.

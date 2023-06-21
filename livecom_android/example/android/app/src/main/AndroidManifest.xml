@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.livecom.livecom_android_example">
     <application
         android:label="livecom_android_example"
         android:name="${applicationName}"

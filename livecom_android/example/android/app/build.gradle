@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    namespace "com.livecom.livecom_android_example"
+//    namespace "com.livecom.livecom_android_example"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -63,7 +63,8 @@ android {
     }
 
     packagingOptions {
-        resources.excludes.add("META-INF/LICENSE*.*")
+        exclude("META-INF/LICENSE*.*")
+        exclude("META-INF/core_release.kotlin_module")
     }
 }
 
